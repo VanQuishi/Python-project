@@ -13,15 +13,26 @@ abbrDict = {
 def search(word):
 
     keyList = list(abbrDict.keys())
+    numOfItems = 0
 
     for item in keyList:
         if word == item:
             print(word, "means", abbrDict[item])
-        else:
-            print("Key word does not exist")
-            break
 
-key = input("Input an abbreviation: ")
-search(key)
+        else:
+            numOfItems = numOfItems + 1
+
+    if numOfItems == len(keyList):
+        print("Key word does not exist")
+
+
+option = input("Input 1 to start searching, 0 to stop: ")
+
+while int(option) == 1:
+    key = input("Input an abbreviation: ")
+    search(key)
+    option = input("Input 1 to start searching, 0 to stop: ")
+
+    
 
 
