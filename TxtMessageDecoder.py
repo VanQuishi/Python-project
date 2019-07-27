@@ -10,7 +10,6 @@ abbrDict = {
     "OMG":"oh my God",
 }
 
-
 def search(word):
 
     keyList = list(abbrDict.keys())
@@ -18,8 +17,9 @@ def search(word):
     for item in keyList:
         if word == item:
             print(word, "means", abbrDict[item])
-
-
+        else:
+            print("Key word does not exist")
+            break
 
 key = input("Input an abbreviation: ")
 search(key)
